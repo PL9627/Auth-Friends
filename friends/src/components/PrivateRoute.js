@@ -30,6 +30,26 @@ class Login extends React.Component {
       })
       .catch((err) => console.log("login axios post err", err));
   };
+
+  render() {
+      return (
+          <div>
+              <form onSubmit={this.login}>
+                  <input 
+                  name="username"
+                  type="text"
+                  onChange={this.handleChanges}
+                  value={this.state.credentials.username}/>
+                  <input 
+                  name="password"
+                  type="text"
+                  onChange={this.handleChanges}
+                  value={this.state.credentials.password}/>
+                  <button>Add New Friend</button>
+              </form>
+          </div>
+      )
+  }
 }
 
 export default Login;
