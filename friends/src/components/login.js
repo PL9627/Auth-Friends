@@ -47,7 +47,7 @@ class Login extends React.Component {
             onChange={this.handleChanges}
             value={this.state.credentials.password}
           />
-          <button>Add New Friend</button>
+          <button>Login</button>
         </form>
       </div>
     );
