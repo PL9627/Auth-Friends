@@ -30,6 +30,17 @@ const FriendForm = () => {
       })
       .catch((err) => console.log("FriendForm handleSubmit err", err));
   };
+
+  return (
+    <div className="friendForm">
+      <form>
+        <input />
+        <input />
+        <input />
+        <button>Add New Friend</button>
+      </form>
+    </div>
+  );
 };
 
 export default FriendForm;
