@@ -33,11 +33,29 @@ const FriendForm = () => {
 
   return (
     <div className="friendForm">
-      <form>
-        <input />
-        <input />
-        <input />
-        <button>Add New Friend</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="name"
+          type="text"
+          onChange={handleChanges}
+          value={newFriendForm.name}
+          placeholder="Type Friend's Name Here..."
+        />
+        <input
+          name="age"
+          type="text"
+          onChange={handleChanges}
+          value={newFriendForm.age}
+          placeholder="Type Friend's Age Here..."
+        />
+        <input
+          name="email"
+          type="text"
+          onChange={handleChanges}
+          value={newFriendForm.email}
+          placeholder="Type Friend's Email Here..."
+        />
+        <button type="submit">Add New Friend</button>
       </form>
     </div>
   );
