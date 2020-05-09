@@ -14,6 +14,18 @@ const FriendList = () => {
       })
       .catch((err) => console.log("FriendList useEffect err", err));
   });
+
+  return (
+    <div className="friendList">
+      <div>
+        {newFriendList.map((friends) => {
+          <div key={friends.id}>
+            <FriendCard newFriend={friends} />
+          </div>;
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default FriendList;
