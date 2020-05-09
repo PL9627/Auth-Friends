@@ -4,7 +4,7 @@ import FriendForm from "./FriendForm";
 import FriendCard from "./FriendCard";
 
 const FriendList = () => {
-  const { newFriendList, setNewFriendList } = useState([]);
+  const [newFriendList, setNewFriendList] = useState([]);
 
   useEffect(() => {
     axiosWithAuth()
@@ -13,17 +13,17 @@ const FriendList = () => {
         setNewFriendList(res.data);
       })
       .catch((err) => console.log("FriendList useEffect err", err));
-  });
+  }, []);
 
   return (
     <div className="friendList">
-      <div>
-        {newFriendList.map((friends) => {
-          <div key={friends.id}>
-            <FriendCard newFriend={friends} />
-          </div>;
-        })}
-      </div>
+      <FriendForm />
+      <h2>Friends</h2>
+      {newFriendList.map((friends) => (
+        <div key={friends.id}>
+          <FriendCard friends={friends} />
+        </div>
+      ))}
     </div>
   );
 };

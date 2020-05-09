@@ -1,11 +1,11 @@
 import React from "react";
 
-const FriendCard = ({ newFriend }) => {
+const FriendCard = ({ friends }) => {
   return (
     <div className="friendCard">
-      <p>name: {newFriend.name}</p>
-      <p>age: {newFriend.age}</p>
-      <p>eamil: {newFriend.email}</p>
+      <p>name: {friends.name}</p>
+      <p>age: {friends.age}</p>
+      <p>email: {friends.email}</p>
     </div>
   );
 };
