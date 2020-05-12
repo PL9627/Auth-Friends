@@ -3,14 +3,18 @@ import { axiosWithAuth } from "../utils/axioswithAuth";
 
 const Login = (props) => {
   const [loginCred, setLoginCred] = useState({
+   credentials: {
     username: "",
     password: "",
+   }
   });
 
   const handleChanges = (e) => {
     setLoginCred({
-      ...loginCred,
+     credentials: {
+      ...loginCred.credentials,
       [e.target.name]: e.target.value,
+     }
     });
   };
 
@@ -18,7 +22,7 @@ const Login = (props) => {
     e.preventDefault();
 
     axiosWithAuth()
-      .post("/login", loginCred)
+      .post("/login", loginCred.credentials)
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
 
@@ -34,13 +38,13 @@ const Login = (props) => {
           name="username"
           type="text"
           onChange={handleChanges}
-          value={loginCred.username}
+          value={loginCred.credentials.username}
         />
         <input
           name="password"
           type="text"
           onChange={handleChanges}
-          value={loginCred.password}
+          value={loginCred.credentials.password}
         />
         <button>Login</button>
       </form>
